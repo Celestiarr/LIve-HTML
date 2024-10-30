@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Formulir Pendaftaran</h2>
+    <form id="form">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" nama="nama" />
+        <button type="button" onclick="tampilkanpesan()">Submit</button>
+    </form>
+
+    <h2>Hitung Usia Anda</h2>
+    <label for="tahunlahir">Tahun Lahir</label>
+    <input type="number" id="tahunlahir" />
+    <button type="button" onclick="hitungUsia()">Hitung</button>
+    <p id="hasil"></p>
+
+
+    <script>
+        function tampilkanpesan() {
+            var nama = document.getElementById("nama").value;
+            alert("Hello, " + nama + "!")
+        }
+    </script>
+    
+    <script>
+        function hitungUsia() {
+            var tahunlahir = document.getElementById("tahunlahir").value;
+            var tahunsekarang = new Date().getFullYear();
+            var usia = tahunsekarang - tahunlahir;
+            document.getElementById("hasil").innerText =
+                "Umur Anda Adalah " + usia + " tahun.";
+        }
+    </script>
+
+    
+</body>
+</html>
